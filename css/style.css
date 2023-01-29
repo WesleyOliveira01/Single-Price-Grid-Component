@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --corDeFundo: #e6eff6;
+  --corContainerPrincipal: #fff;
+  --corCartao2: #2bb3b1;
+  --corCartao3: #4abebd;
+  --corBtn: #bfdf32;
+
+  --corFont: #87888a;
+  --corFontsecundaria: #e5eff5;
+  --corFont3: #cbfefe;
+  --corFont2: #addede;
+
+  --fontpadrao: "Karla", sans-serif;
+}
+
+body {
+  background-color: var(--corDeFundo);
+  font-family: var(--fontpadrao);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin: 2rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+#container-principal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "cartao1 cartao1"
+    "cartao2 cartao3";
+
+  background-color: var(--corContainerPrincipal);
+  margin: 5% auto;
+  width: 50%;
+  border-radius: 8px;
+  box-shadow: -2px 2px 9px 1px #0000004f;
+}
+
+.cartao1 {
+  grid-area: cartao1;
+  color: var(--corFont);
+}
+
+.cartao1 h1 {
+  color: var(--corCartao2);
+  margin-bottom: 16px;
+}
+
+.cartao1 h3 {
+  color: var(--corBtn);
+  margin-bottom: 16px;
+}
+
+.cartao1 p {
+  line-height: 24px;
+}
+
+.cartao2 {
+  grid-area: cartao2;
+  background-color: var(--corCartao2);
+  border-radius: 0 0 0 8px;
+  color: var(--corFontsecundaria);
+}
+
+.cartao2 h3 {
+  margin-bottom: 16px;
+}
+
+.cartao2 span {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.cartao2 span > h1 {
+  margin-right: 16px;
+}
+
+.cartao2 span > p {
+  color: var(--corFont2);
+}
+.cartao2 > p {
+  margin-bottom: 32px;
+}
+.cartao3 {
+  grid-area: cartao3;
+  background-color: var(--corCartao3);
+  border-radius: 0 0 8px 0;
+}
+
+.cartao3 h2 {
+  color: var(--corFontsecundaria);
+  margin-bottom: 16px;
+}
+
+.cartao3 p {
+  width: 70%;
+  color: var(--corFont3);
+  line-height: 24px;
+}
+
+.cartao {
+  padding: 1.5rem;
+}
+
+/* botton */
+
+.btn {
+  background-color: var(--corBtn);
+  color: var(--corFontsecundaria);
+  padding: 16px;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  box-shadow: -2px 2px 9px 1px #0000004f;
+  transition: 0.5s;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  scale: 1.05;
+}
+
+@media (max-width: 540px) {
+  #container-principal {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "cartao1"
+      "cartao2"
+      "cartao3";
+
+    margin: 5%;
+    width: 90%;
+  }
+  .cartao1 {
+    grid-area: cartao1;
+  }
+  .cartao2 {
+    grid-area: cartao2;
+    border-radius: 0;
+  }
+  .cartao3 {
+    grid-area: cartao3;
+    border-radius: 0 0 8px 8px;
+  }
+}
